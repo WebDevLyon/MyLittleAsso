@@ -71,12 +71,12 @@ const rules = {
   required: value => !!value || 'Required.',
   email: value =>
     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-    'Invalid email address.'
+    'Invalid email address.',
 }
 
 function register() {
   store.register({ email: email.value, password: password.value, name: name.value })
-  .then(() => { messageResponseServer.value = "Connexion réussie"; router.push({name:"home"}) })
+  .then(() =>  messageResponseServer.value = "Enregistrement réussi" )
   .catch((error) => messageResponseServer.value = error)
   }
   

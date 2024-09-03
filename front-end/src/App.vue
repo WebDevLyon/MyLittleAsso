@@ -1,11 +1,11 @@
-<script setup>
-
-</script>
-
 <template>
-  <RouterView />
+    <router-view />
+   <app-modal v-if="modalStore.showModal" @close="modalStore.closeModal" />
 </template>
 
-<style scoped>
+<script setup>
+import { useModalStore } from '@/stores/modalStore';
+import AppModal from "@/components/AppModal.vue"
 
-</style>
+const modalStore = useModalStore();
+</script>

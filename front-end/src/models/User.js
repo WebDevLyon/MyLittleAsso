@@ -1,8 +1,9 @@
 export default class User {
-  constructor({ name, email, token }) {
+  constructor({ name, email, token, role="membre" }) {
     this.name = name;
     this.email = email;
     this.token = token;
+    this.role = role
   }
 
   static fromApiResponse(response) {
